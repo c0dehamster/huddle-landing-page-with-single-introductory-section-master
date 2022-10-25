@@ -15,14 +15,18 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="wrapper">
+		<main class="wrapper">
 			<div class="logo">
-				<img src="./images/logo.svg" alt="huddle logo" class="logo__image" />
+				<img src="./images/logo.svg" alt="huddle logo" class="logo__image" aria-hidden="true" />
 			</div>
 
 			<div class="contents">
 				<picture class="illustration">
-					<img src="./images/illustration-mockups.svg" alt="" class="illustration__image" />
+					<img
+						src="./images/illustration-mockups.svg"
+						alt=""
+						class="illustration__image"
+						aria-hidden="true" />
 				</picture>
 
 				<div class="text-area">
@@ -37,17 +41,23 @@
 				</div>
 			</div>
 
-			<ul class="social-links">
+			<ul class="social-links" role="list" aria-label="links to our social media pages">
 				<li class="social-links__list-item">
-					<a href="#" class="social-links__link" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#" class="social-links__link" aria-label="facebook" target="_blank"
+						><i class="fa-brands fa-facebook-f"></i
+					></a>
 				</li>
 				<li class="social-links__list-item">
-					<a href="#" class="social-links__link" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#" class="social-links__link" aria-label="twitter" target="_blank"
+						><i class="fa-brands fa-twitter"></i
+					></a>
 				</li>
 				<li class="social-links__list-item">
-					<a href="#" class="social-links__link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#" class="social-links__link" aria-label="instagram" target="_blank"
+						><i class="fa-brands fa-instagram"></i
+					></a>
 				</li>
 			</ul>
-		</div>
+		</main>
 	</body>
 </html>
