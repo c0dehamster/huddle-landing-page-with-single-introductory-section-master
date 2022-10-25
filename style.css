@@ -1,0 +1,273 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* No animations on the page, nothing to turn off */
+
+/* General styling */
+
+:root {
+	--font-main: "Open Sans", sans-serif;
+	--font-heading: "Poppins", sans-serif;
+
+	--color-primary-violet: hsl(257, 40%, 49%);
+	--color-primary-soft-magenta: hsl(300, 69%, 71%);
+
+	--font-weight-400: 400;
+	--font-weight-600: 600;
+
+	--font-size-200: 13px;
+	--font-size-400: 16px;
+	--font-size-600: 18px;
+	--font-size-700: 24px;
+	--font-size-800: 27px;
+	--font-size-900: 40px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--color-primary-violet);
+	background-image: url("images/bg-mobile.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	color: white;
+}
+
+/* Block level */
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	width: min(100%, 1440px);
+	height: 800px;
+
+	padding-inline: min(10.13vw, 72px);
+	padding-block: 32px;
+}
+
+.logo {
+	/* Layout and dimensions */
+	margin-block-end: 54px;
+	width: min(36vw, 210px);
+}
+
+.contents {
+	/* Layout and dimensions */
+
+	display: grid;
+	flex-wrap: wrap;
+}
+
+.illustration {
+	/* Layout and dimensions */
+	align-self: center;
+
+	margin-block-end: 60px;
+	margin-inline: auto;
+}
+
+.text-area {
+	/* Layout and dimensions */
+	align-self: center top;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	max-width: 524px;
+	margin-block-end: 52px;
+	margin-inline: auto;
+}
+
+.button {
+	/* Layout and dimensions */
+	height: 40px;
+	width: 198px;
+	border: none;
+	border-radius: 20px;
+	/* Colors */
+	color: var(--color-primary-violet);
+	background-color: white;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+	/* Typography */
+	font-family: var(--font-main);
+	font-size: var(--font-size-200);
+	font-weight: var(--font-weight-400);
+}
+
+.social-links {
+	/* Layout and dimensions */
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	list-style-type: none;
+	padding-left: 0px;
+	gap: min(2.67vw, 16px);
+}
+
+/* Elements */
+
+.text-area__heading {
+	/* Layout and dimensions */
+	margin-block-end: 16px;
+
+	/* Typography */
+	font-family: var(--font-heading);
+	font-size: clamp(var(--font-size-700), 6.4vw, var(--font-size-900));
+	font-weight: var(--font-weight-600);
+}
+
+.text-area__text {
+	/* Layout and dimensions */
+	margin-block-end: 24px;
+
+	/* Typography */
+	font-family: var(--font-main);
+	font-size: var(--font-size-400);
+	font-weight: var(--font-weight-400);
+}
+
+.social-links__list-item {
+	/* Layout and dimensions */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-links__link {
+	/* Layout and dimensions */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: min(7.47vw, 40px);
+	height: min(7.47vw, 40px);
+
+	border-radius: 50%;
+	/* Colors */
+	text-decoration: none;
+	color: white;
+	border: 1px solid;
+
+	/* Typography */
+	font-size: var(--font-size-200);
+	font-weight: var(--font-weight-400);
+}
+
+/* Modifiers */
+
+.button:hover,
+.button:focus {
+	cursor: pointer;
+	background-color: var(--color-primary-soft-magenta);
+	color: white;
+}
+
+.social-links__link:hover,
+.social-links__link:focus {
+	color: var(--color-primary-soft-magenta);
+}
+
+@media (min-width: 1200px) {
+	body {
+		background-image: url(./images/bg-desktop.svg);
+	}
+
+	.logo {
+		margin-bottom: 80px;
+	}
+
+	.wrapper {
+		padding-block-start: 54px;
+	}
+
+	.contents {
+		grid-template-columns: 1fr 524px;
+		gap: 54px;
+		margin-block-end: 16px;
+	}
+
+	.illustration {
+		margin-block-end: 0px;
+	}
+
+	.text-area {
+		text-align: start;
+		align-items: flex-start;
+		margin-block-start: 48px;
+	}
+
+	.button {
+		height: 56px;
+		border-radius: 28px;
+		font-size: var(--font-size-600);
+		box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.social-links {
+		justify-content: flex-end;
+	}
+
+	.text-area__text {
+		font-size: var(--font-size-600);
+	}
+}
